@@ -12,8 +12,8 @@ from scipy.stats import poisson, hypergeom
 
 
 def alleDaten():
-    arr1 = [25, 30, 45]
-    arr = [25, 10, 30, 25, 35, 25]
+    arr = [0.1, 0.1, 0.1, 0.2, 0.2, 0.3]
+    arr1 = [1,2,3,4,3,2,1]
     print('Erwartungswert:', statistics.mean(arr)) #Erwartungswert
     print('Varianz:', statistics.pvariance(arr)) #Varianz pvariance wenn man alle daten hat
     print('Standartabweichung:', statistics.pstdev(arr)) #Standartabweichung ist die Wurzel der Varianz pstdev verwendet von allen daten (nicht empirisch)

@@ -30,21 +30,21 @@ def empirischeStd(arr):
 
 
 def stichprobe():
-    arr3 = [3, 4, 5, 1, 5, 2, 1, 3, 1, 3]
-    arr2 = [18,37,61,125,59]
-    arr = [3, 4, 5, 1, 5, 2, 1, 3, 1, 3]
+    arr1 = [3, 7, 12, 18, 19, 20, 25, 25, 27, 28, 29, 31, 32, 34, 37, 38, 40, 41, 45, 47]
+    arr2 = [3,2,10,7,0,3,5,0,6,1]
+    arr = [24,27,14,15,30,26,15,33,18,30]
     print('Arithmetisches Mittel', np.mean(arr)) # arithmetisches Mittel
-    print('Median:', statistics.median(arr)) # median
-    print('Modalwert', statistics.mode(arr)) # Modalwert (mode of given data set)
-    print('10% Quantil', np.quantile(arr, .10))  # 10% Quantil
-    print('25% Quantil', np.quantile(arr, .25)) # 25% Quantil
-    print('30% Quantil', np.quantile(arr, .30)) # 30% Quantil
-    print('66% Quantil', np.quantile(arr, 0.66))# 66% Quantil
-    print('75% Quantil', np.quantile(arr, 0.75))  # 75% Quantil
-    print('90% Quantil', np.quantile(arr, 0.90))  # 90
+    print('Median:', statistics.median(arr)) # median 2 Quartil
+    print('Modalwert(ACHTUNG! es koennten mehr geben)', statistics.mode(arr)) # Modalwert (mode of given data set)
+    print('10% Quantil', np.quantile(arr, .10, interpolation="midpoint"))  # 10% Quantil
+    print('25% Quantil', np.quantile(arr, .25, interpolation="midpoint")) # 25% Quantil 1 Quartil
+    print('30% Quantil', np.quantile(arr, .30, interpolation="midpoint")) # 30% Quantil
+    print('66% Quantil', np.quantile(arr, 0.66, interpolation="midpoint")) # 66% Quantil
+    print('75% Quantil', np.quantile(arr, 0.75, interpolation="midpoint"))  # 75% Quantil 3 Quartil
+    print('90% Quantil', np.quantile(arr, 0.90, interpolation="midpoint"))  # 90
     # % Quantil
     print('Varianz:', statistics.variance(arr)) # Varianz
-    print('Standartabweichung:', statistics.pstdev(arr)) #Standartabweichung
+    print('Standardabweichung:', statistics.stdev(arr)) #Standartabweichung
     q3, q1 = np.percentile(arr, [75, 25])# Interquantilabstand ist immer zwischen x0.25 und x0.75 also zwischen erstes quantil und drittes quantil
     print('Interquartilabstand:', q3 - q1)
     print('Spannweite:', max(arr) - min(arr))# Spannweite max - min
